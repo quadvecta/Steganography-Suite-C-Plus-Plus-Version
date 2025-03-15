@@ -8,7 +8,7 @@
 #include <cryptopp/base64.h>
 #include <cryptopp/osrng.h>
 
-// Function to encrypt a message using AES
+// Function to encrypt a message (using AES)
 std::string encryptMessage(const std::string &message, std::string &key) {
     CryptoPP::AutoSeededRandomPool prng;
     CryptoPP::SecByteBlock keyBytes(32); // 256-bit key
@@ -27,7 +27,7 @@ std::string encryptMessage(const std::string &message, std::string &key) {
     return encrypted;
 }
 
-// Function to decrypt a message using AES
+// Function to decrypt a message (using AES)
 std::string decryptMessage(const std::string &encrypted, const std::string &key) {
     CryptoPP::SecByteBlock keyBytes(reinterpret_cast<const unsigned char*>(key.data()), key.size());
 
